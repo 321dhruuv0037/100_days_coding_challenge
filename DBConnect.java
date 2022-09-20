@@ -13,7 +13,8 @@ public class DBConnect {
 
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
-
+    
+    //Establishing connection with database
     public void establishConnection() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -21,6 +22,7 @@ public class DBConnect {
         connect = DriverManager.getConnection("jdbc:mysql://localhost/demo?"
                 + "user=root1&password=");
     }
+    
     public void readDataBase() throws Exception {
         try {
             establishConnection();
