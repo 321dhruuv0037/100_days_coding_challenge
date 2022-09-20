@@ -3,3 +3,4 @@
 2. Stack 
 3. hackerrank1: https://www.hackerrank.com/challenges/frequency-of-digits-1/problem
 4. Linear queue
+5. DB Connection and Insertion of data
