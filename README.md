@@ -6,3 +6,4 @@
 5. DB Connection and Insertion of data
 6. Insertion and database data display
 7. Stack implementation using linked list
+8. Postfix evaluation
