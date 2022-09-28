@@ -8,3 +8,5 @@
 7. Stack implementation using linked list
 8. Postfix evaluation
 9. Circular Queue
+10. Simple Interest Calculator
+11. Loan calculator
