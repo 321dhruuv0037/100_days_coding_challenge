@@ -2,7 +2,7 @@ import java.util.*;
 public class Loan{
 	public static void main(String[] args){
 
-		double emi;
+		float emi;
 		Scanner sc =  new Scanner(System.in);
 		
 		System.out.print("Enter amount invested : ");
@@ -13,7 +13,7 @@ public class Loan{
 		System.out.print("Enter rate of interest : ");
 		double rate = sc.nextDouble();
         rate = rate/(12*100);
-		emi = (invested*rate*Math.pow(1+rate,time))/(Math.pow(1+rate,time)-1);
+		emi = (float) ((invested*rate*Math.pow(1+rate,time))/(Math.pow(1+rate,time)-1));
 		System.out.println("EMI is "+emi);
 
 	}
