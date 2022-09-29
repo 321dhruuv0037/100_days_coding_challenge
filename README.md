@@ -9,4 +9,5 @@
 8. Postfix evaluation
 9. Circular Queue
 10. Simple Interest Calculator
-11. Loan calculator
+11. Loan Calculator
+12. LumpSum Calculator
