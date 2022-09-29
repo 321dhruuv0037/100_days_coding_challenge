@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ConnectDB {
+class ConnectDB {
     static Connection connection = null;
     static String databaseName = "";
     static String url = "jdbc:mysql://localhost:3306/" + databaseName;
