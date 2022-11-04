@@ -110,27 +110,32 @@ void insert_atEnd(){
 }
 
 void insert_atPosition(){
-    int n, count;
-    printf("\nEnter element to be inserted : ");
-    scanf("%d", &n);
-    if (list == NULL)
-    {
-        printf("List is empty\n");
+    int n, count, i;
+    struct node *newnode, *temp;
+    printf("\nEnter position : ");
+    scanf("%d", &count);
+    temp=list;
+    if(temp==NULL){      
+        insert_atBeg(n);
+        printf("Since the list is empty, so inserted element at the beginning",count);   
     } else {
-        struct node *newnode, *temp;
-        newnode = getnode();
-        newnode->info = n;
-        temp=list;
-        printf("\nEnter position at which %d is to be inserted : ", n);
-        scanf("%d", &count);
-        while(count>0){
-            temp = temp->next;
-            count--;
-        }
-        newnode->next = temp->next;
-        temp=newnode;
-
-    }
+        printf("\nEnter element to be inserted : ");
+        scanf("%d", &n);
+		for(i=1;i<count-1;i++)
+		{
+		    if(temp-> next==NULL)
+			{
+				printf("There are less than %d elements in the List, so inserted element at the end",count);
+				break;
+			}
+			temp=temp->next;
+		}
+		newnode = getnode();
+        newnode->info=n;
+		newnode->next=temp->next;
+		temp->next=newnode;
+		display();
+	}
 }
 
 void delete_atBeg(){
@@ -168,19 +173,33 @@ void delete_atPosition(){
     if (list == NULL)
     {
         printf("List is empty\n");
-    } else {
-        struct node *temp, *del;
-        int count;
-        temp = list;
-        printf("\nEnter position at which element is to be inserted : ");
+    } else {   
+        int i, count;
+        struct node *temp, *ptr;        
+        printf("\nEnter position : ");
         scanf("%d", &count);
-        while(count>0){
-            temp = temp->next;
-            count--;
-        }
-        temp->next = NULL;
-
-    }    
+        temp = list;
+		if(count==1)
+			list=list->next;
+		else{
+            for(i=1;i<count;i++)
+            {
+                if(temp-> next==NULL)
+                {
+                    printf("There are less than %d elements in the Less" ,count);
+                    break;
+                }
+                ptr=temp;                                     
+                temp=temp->next;    
+            }
+		}
+	    if(temp->next!=NULL){
+            printf("Element  %d successfully deleted",temp->info);
+            ptr->next=temp->next;
+            freenode(temp);
+		}
+		display();
+	} 
 }
 
 void display(){
